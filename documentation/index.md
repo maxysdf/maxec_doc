@@ -4,7 +4,7 @@
 * GraphQL
 * CI/CD
 * Container
-* Microservice (多數功能被K8S取代)
+* Microservice (僅使用feign, 多數功能被K8S取代)
 
 ## 子專案
 ### 前端
@@ -27,8 +27,8 @@ SpringBoot應用程式, 實作feign介面
 * **maxec-biz-search**: 搜尋服務
 * **maxec-biz-content**: 內容服務
 * **maxec-biz-shopping**: 購物服務
-* **maxec-biz-order: 訂單服務
-* **macec-biz-customer: 客戶服務
+* **maxec-biz-order**: 訂單服務
+* **macec-biz-customer**: 客戶服務
 
 ### 資料層
 資料存放層, 依資料特性規劃:
@@ -37,17 +37,15 @@ SpringBoot應用程式, 實作feign介面
 * **maxec-nosqldb**: NoSQL資料庫, 採用redis
 
 ## 佈署架構
-![deployment](/images/dep.png)
+![deployment](/images/deployment.png)
 
 ## CI/CD
-![deployment](/images/cicd.png)
-* git
-* jenkins
+![cicd](/images/cicd.png)
 
-
-# This is the **HOMEPAGE**.
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
-## Quick Start Notes:
-1. Add images to the *images* folder if the file is referencing an image.
-
-2. this is test
+建構CI/CD pipeline, 並自行建置環境:
+1. source code push至 SCM (git powered by Gogs),
+隨後SCM透過Web Hook通知CI Server
+2. CI Server (Jenkins) 收到通知, 開始取得原始碼並執行Pipeline
+    1. 推送Docker Image至Docker Image Registry (Harbor)
+    2. 呼叫K8S以佈署Service/StateSet/Ingress
+3. CD Server/Cluster (K8S)自Image Registry取得Image並部署

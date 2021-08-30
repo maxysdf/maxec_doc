@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 100;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Thin.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 300;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Light.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 400;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Regular.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 500;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Medium.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 700;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Bold.otf) format('otf');
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    font-style: normal;
+    font-weight: 900;
+    src: url(http://localhost:8080/fonts/NotoSansTC-Black.otf) format('otf');
+}
+
+img[alt=cicd] {
+    width: 650px;
+    display: block;
+}
+
+img[alt=deployment] {
+    width: 800px;
+    display: block;
+}
+
+p {
+    font-family: 'Noto Sans TC Light';
+}
+
+
+* {
+    font-family: 'Noto Sans TC Light';
+}
+
+h1,h2,h3,h4,h5 {
+    font-family: 'Noto Sans TC' !important;
+    font-style: normal !important;
+}
+

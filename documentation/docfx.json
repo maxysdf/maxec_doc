@@ -13,11 +13,17 @@
     "resource": [
       {
         "files": [
-          "images/**"
+          "images/**",
+          "styles/**",
+          "fonts/**"
         ]
       }
     ],
     "dest": "_site",
+    "globalMetadata": {
+      "_appLogoPath": "/images/logo.png",
+      "_appFaviconPath": "/images/favicon.ico"
+    },
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
@@ -29,5 +35,68 @@
     "keepFileLink": false,
     "cleanupCacheHistory": false,
     "disableGitFeatures": false
+  },
+  "pdf": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api-vb/**.yml"
+        ],
+        "exclude": [
+          "**/toc.yml",
+          "**/toc.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md",
+          "pdf/*"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**",
+          "**/toc.yml",
+          "**/toc.md"
+        ]
+      },
+      {
+        "files": "pdf/toc.yml"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "fonts/**"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "**/bin/**",
+          "**/obj/**",
+          "_site_pdf/**"
+        ]
+      }
+    ],
+    "wkhtmltopdf": {
+      "additionalArguments": "--enable-local-file-access --debug-javascript --user-style-sheet D:\\maxec_doc\\documentation\\styles\\pdf.css"
+    },
+    "dest": "_site_pdf"
   }
+
 }
