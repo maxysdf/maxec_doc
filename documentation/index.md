@@ -35,6 +35,7 @@ SpringBoot應用程式, 實作feign介面
 * **maxec-db**: 關連式資料庫, 採用postgresql
 * **maxec-se**: 搜尋引擎, 採用elasticsearch
 * **maxec-nosqldb**: NoSQL資料庫, 採用redis
+* **maxec-mq**: 訊息佇列服務, 採用RabbitMQ
 
 ## 佈署架構
 ![deployment](/images/deployment.png)
